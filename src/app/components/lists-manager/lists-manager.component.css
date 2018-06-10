@@ -1,0 +1,33 @@
+.control-panel {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: lightgrey;
+}
+
+.control-panel section {
+  height: 11vh;
+  flex-grow: 1;
+  paddin-left: 1.5rem;
+}
+
+.control-panel button, .control-panel input {
+  vertical-align: middle;
+  margin: 0.4rem;
+  margin-bottom: 0rem;
+  font-size: 1rem;
+}
+
+.control-panel button {
+  background-color: #4c93ff;
+}
+
+.isDisable {
+  opacity: 0.5;
+}
+
+.content {
+  margin-top: 12vh;
+}

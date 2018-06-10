@@ -1,0 +1,8 @@
+body {
+  counter-reset: object;
+}
+
+.ordered::before {
+  counter-increment: object;
+  content: counter(object);
+}

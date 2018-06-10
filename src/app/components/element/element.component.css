@@ -1,0 +1,43 @@
+.element {
+  margin: 15px;
+  display: block;
+  min-width: 10rem;
+}
+
+@media (min-width: 576px){
+  .element {
+    display: inline-block;
+  }
+}
+
+.element.hidden, .element.display {
+  padding: 8px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.element.display {
+  background-color: #a3ff46;
+}
+
+.element.hidden {
+  color: red;
+  background-color: #3355ff;
+}
+
+.object-label {
+  line-height: 1.8rem;
+  vertical-align: middle;
+}
+
+.display .object-label {
+  font-size: 1.5rem;
+}
+
+.ordered::before {
+  border-radius: 30px;
+  padding: 5px;
+  float: left;
+  background-color: #ff8833;
+  color: black;
+}
