@@ -23,7 +23,7 @@ export class ListsManagerComponent implements OnInit {
   }
 
   loadElements(): void {
-    this.elements = this.elementService.getElementsStore();
+    this.elements = this.elementService.getElementsStore(this.numberElements);
   }
 
   getElements(): Element[] {
