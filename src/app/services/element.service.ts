@@ -7,21 +7,26 @@ export class ElementService {
 
   private objects: string[] = OBJECTS;
 
-  private elements: Element[];
-
   constructor() {}
 
-  private getRandomElement(isVisible: boolean) {
-    const index = Math.floor(Math.random() * this.objects.length);
-    return new Element(this.objects[index], isVisible);
+  private getRandomObject(): string {
+    return this.objects[Math.floor(Math.random() * this.objects.length)];
   }
 
   getElementsStore(numberOfElements): Element[] {
-    const list: Element[] = [];
-    while (list.length < numberOfElements) {
-      list.push(this.getRandomElement(false));
+    const listOfElements: Element[] = [];
+    const addedObjects = {};
+    let counter = 0;
+    while (counter < numberOfElements) {
+      const selectedObject = this.getRandomObject();
+      if (!addedObjects[selectedObject]) {
+        addedObjects[selectedObject] = true;
+        listOfElements.push(new Element(selectedObject, false));
+        counter++;
+      }
     }
-    return list;
+
+    return listOfElements;
   }
 
 }
