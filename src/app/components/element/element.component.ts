@@ -29,7 +29,11 @@ export class ElementComponent implements OnInit {
     this.element.isVisible = !this.element.isVisible;
   }
 
-  getObjectLabel() {
+  getElementNumber() {
+    return this.element.number;
+  }
+
+  getElementLabel() {
     return this.isShown() ? this.element.label : HIDDEN_LABEL;
   }
 

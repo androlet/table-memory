@@ -34,7 +34,7 @@
   font-size: 1.5rem;
 }
 
-.ordered::before {
+.index {
   border-radius: 30px;
   padding: 5px;
   float: left;
