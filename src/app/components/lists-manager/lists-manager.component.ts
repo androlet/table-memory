@@ -11,6 +11,8 @@ export class ListsManagerComponent implements OnInit {
 
   private elements: Element[];
 
+  private elementsRead: Element[] = [];
+
   numberElements: number;
 
   constructor(private elementService: ElementService) {
@@ -31,11 +33,11 @@ export class ListsManagerComponent implements OnInit {
   }
 
   hideElements(): void {
-    this.elements.forEach(element => element.isVisible = false);
+    this.elements.forEach(element => element.hide());
   }
 
   displayElements(): void {
-    this.elements.forEach(element => element.isVisible = true);
+    this.elements.forEach(element => element.display());
   }
 
   hasAllElementsDisplayed() {
@@ -44,5 +46,17 @@ export class ListsManagerComponent implements OnInit {
 
   hasAllElementsHidden() {
     return this.elements.every(element => !element.isVisible);
+  }
+
+  isReaderDisplayed(): boolean {
+    return this.elementsRead.length > 0;
+  }
+
+  startReading(): void {
+    this.elementsRead = JSON.parse(JSON.stringify(this.elements));
+  }
+
+  getElementsRead(): Element[] {
+    return this.elementsRead;
   }
 }

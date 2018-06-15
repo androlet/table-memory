@@ -2,7 +2,7 @@
   <section class="control-list">
     <input type="number" [(ngModel)]="numberElements" placeholder="Size of list"/>
     <button (click)="loadElements()">Generate</button>
-    <button (click)="loadElements()">Read randomly</button>
+    <button (click)="startReading()">Read randomly</button>
   </section>
   <section class="control-display-list">
     <button [ngClass]="{isDisable: hasAllElementsDisplayed()}" (click)="displayElements()">Show</button>
@@ -11,6 +11,9 @@
 </section>
 <section class="content">
       <app-element *ngFor="let element of getElements()" [element]="element"></app-element>
+</section>
+<section *ngIf="isReaderDisplayed()">
+  <app-random-reader [elements]="getElementsRead()"></app-random-reader>
 </section>
 
 

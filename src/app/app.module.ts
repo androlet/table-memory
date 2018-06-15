@@ -7,19 +7,22 @@ import { ListsManagerComponent } from './components/lists-manager/lists-manager.
 import { ElementComponent } from './components/element/element.component';
 import {ElementService} from './services/element.service';
 import {FormsModule} from '@angular/forms';
+import { RandomReaderComponent } from './components/random-reader/random-reader.component';
+import {RandomService} from "./services/random.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListsManagerComponent,
-    ElementComponent
+    ElementComponent,
+    RandomReaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [ElementService],
+  providers: [ElementService, RandomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
