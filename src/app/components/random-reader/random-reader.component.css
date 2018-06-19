@@ -1,0 +1,16 @@
+.random-reader {
+  margin: auto;
+  text: center;
+}
+
+.text-element, button {
+  display: block;
+}
+
+.text-element {
+  font-size: 5rem;
+}
+
+button {
+  font-size: 2rem;
+}

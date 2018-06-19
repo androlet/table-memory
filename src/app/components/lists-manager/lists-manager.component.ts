@@ -11,7 +11,7 @@ export class ListsManagerComponent implements OnInit {
 
   private elements: Element[];
 
-  private elementsRead: Element[] = [];
+  private elementsToRead: Element[] = [];
 
   numberElements: number;
 
@@ -26,6 +26,7 @@ export class ListsManagerComponent implements OnInit {
 
   loadElements(): void {
     this.elements = this.elementService.getElementsStore(this.numberElements);
+    this.refreshElementsToRead();
   }
 
   getElements(): Element[] {
@@ -48,15 +49,28 @@ export class ListsManagerComponent implements OnInit {
     return this.elements.every(element => !element.isVisible);
   }
 
+  displayList() {
+    this.elementsToRead = [];
+  }
+
   isReaderDisplayed(): boolean {
-    return this.elementsRead.length > 0;
+    return this.elementsToRead.length > 0;
+  }
+
+  isListDisplayed(): boolean {
+    return this.elementsToRead.length <= 0;
   }
 
   startReading(): void {
-    this.elementsRead = JSON.parse(JSON.stringify(this.elements));
+    this.refreshElementsToRead();
   }
 
   getElementsRead(): Element[] {
-    return this.elementsRead;
+    return this.elementsToRead;
+  }
+
+  private refreshElementsToRead(): void {
+    this.elementsToRead = JSON.parse(JSON.stringify(this.elements));
+    console.log(this.elementsToRead.length);
   }
 }

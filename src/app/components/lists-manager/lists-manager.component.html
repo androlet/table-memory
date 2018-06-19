@@ -1,20 +1,29 @@
-<section class="control-panel">
-  <section class="control-list">
-    <input type="number" [(ngModel)]="numberElements" placeholder="Size of list"/>
-    <button (click)="loadElements()">Generate</button>
-    <button (click)="startReading()">Read randomly</button>
+<section class="list-manager">
+  <section class="control-panel">
+      <section class="control-list">
+        <input type="number" [(ngModel)]="numberElements" placeholder="Size of list"/>
+        <div>
+          <button (click)="loadElements()">Generate</button>
+          <button *ngIf="!isReaderDisplayed()" (click)="startReading()">Read randomly</button>
+          <button *ngIf="!isListDisplayed()" (click)="displayList()">Display list</button>
+        </div>
+      </section>
+      <section *ngIf="isListDisplayed()" class="control-display-list">
+        <button [ngClass]="{isDisable: hasAllElementsDisplayed()}" (click)="displayElements()">Show</button>
+        <button [ngClass]="{isDisable: hasAllElementsHidden()}" (click)="hideElements()">Hide</button>
+      </section>
   </section>
-  <section class="control-display-list">
-    <button [ngClass]="{isDisable: hasAllElementsDisplayed()}" (click)="displayElements()">Show</button>
-    <button [ngClass]="{isDisable: hasAllElementsHidden()}" (click)="hideElements()">Hide</button>
-  </section>
-</section>
-<section class="content">
+  <section class="content">
+    <section *ngIf="isReaderDisplayed()">
+      <app-random-reader [elements]="getElementsRead()"></app-random-reader>
+    </section>
+    <section *ngIf="isListDisplayed()">
       <app-element *ngFor="let element of getElements()" [element]="element"></app-element>
+    </section>
+  </section>
 </section>
-<section *ngIf="isReaderDisplayed()">
-  <app-random-reader [elements]="getElementsRead()"></app-random-reader>
-</section>
+
+
 
 
 
