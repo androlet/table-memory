@@ -24,7 +24,18 @@ export class ListsManagerComponent implements OnInit {
     this.loadElements();
   }
 
+  private applyNumberElementsConstraints() {
+    const maxSize = this.elementService.getMaximumSizeAllowed();
+    const minSize = this.elementService.getMinimumSizeAllowed();
+    if (this.numberElements > maxSize) {
+      this.numberElements = maxSize;
+    } else if (this.numberElements < minSize) {
+      this.numberElements = minSize;
+    }
+  }
+
   loadElements(): void {
+    this.applyNumberElementsConstraints();
     this.elements = this.elementService.getElementsStore(this.numberElements);
     this.refreshElementsToRead();
   }

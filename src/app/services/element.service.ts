@@ -14,6 +14,14 @@ export class ElementService {
     return this.objects[this.randomService.getRandomNumber(this.objects.length)];
   }
 
+  getMinimumSizeAllowed(): number {
+    return 1;
+  }
+
+  getMaximumSizeAllowed(): number {
+    return this.objects.length;
+  }
+
   getElementsStore(numberOfElements): Element[] {
     const listOfElements: Element[] = [];
     const addedObjects = {};
