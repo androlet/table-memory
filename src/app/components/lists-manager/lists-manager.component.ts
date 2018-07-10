@@ -71,6 +71,5 @@ export class ListsManagerComponent implements OnInit {
 
   private refreshElementsToRead(): void {
     this.elementsToRead = JSON.parse(JSON.stringify(this.elements));
-    console.log(this.elementsToRead.length);
   }
 }

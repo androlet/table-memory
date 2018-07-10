@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {RandomService} from '../../services/random.service';
 import {Element} from '../../models/element';
 
@@ -7,32 +7,25 @@ import {Element} from '../../models/element';
   templateUrl: './random-reader.component.html',
   styleUrls: ['./random-reader.component.css']
 })
-export class RandomReaderComponent implements OnInit {
+export class RandomReaderComponent implements OnChanges {
 
   @Input('elements') private elementsRead: Element[];
 
-  private indexElement: number;
+  elementRead: Element;
 
   constructor(private randomService: RandomService) { }
 
-  ngOnInit() {
+  ngOnChanges() {
     this.readRandomElement();
   }
 
-  getCurrentElementNumber(): number {
-    return this.elementsRead[this.indexElement].number;
-  }
-
-  getCurrentElementLabel(): string {
-    return this.elementsRead[this.indexElement].label;
-  }
-
   readNextRandomElement(): void {
-    this.elementsRead.splice(this.indexElement, 1);
+    this.elementsRead.splice(this.elementRead.number, 1);
     this.readRandomElement();
   }
 
   private readRandomElement(): void {
-    this.indexElement = this.randomService.getRandomNumber(this.elementsRead.length);
+    const indexElement = this.randomService.getRandomNumber(this.elementsRead.length);
+    this.elementRead = this.elementsRead[indexElement];
   }
 }
