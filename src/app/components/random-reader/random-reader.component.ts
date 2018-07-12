@@ -12,6 +12,7 @@ export class RandomReaderComponent implements OnChanges {
   @Input('elements') private elementsRead: Element[];
 
   elementRead: Element;
+  private indexElement: number;
 
   constructor(private randomService: RandomService) { }
 
@@ -20,12 +21,12 @@ export class RandomReaderComponent implements OnChanges {
   }
 
   readNextRandomElement(): void {
-    this.elementsRead.splice(this.elementRead.number, 1);
+    this.elementsRead.splice(this.indexElement, 1);
     this.readRandomElement();
   }
 
   private readRandomElement(): void {
-    const indexElement = this.randomService.getRandomNumber(this.elementsRead.length);
-    this.elementRead = this.elementsRead[indexElement];
+    this.indexElement = this.randomService.getRandomNumber(this.elementsRead.length);
+    this.elementRead = this.elementsRead[this.indexElement];
   }
 }
