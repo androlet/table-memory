@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ElementComponent } from './element.component';
+import {Element} from '../../models/element';
 
 describe('ElementComponent', () => {
   let component: ElementComponent;
@@ -16,10 +17,11 @@ describe('ElementComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ElementComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    component.element = new Element(1, 'peach', false);
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

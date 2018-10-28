@@ -2,7 +2,6 @@ export class Element {
 
   number: number;
   label: string;
-  answer: string;
   isVisible: boolean;
 
   constructor(number: number, label: string, isVisible: boolean) {

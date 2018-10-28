@@ -1,11 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ElementService } from './element.service';
+import {RandomService} from './random.service';
 
 describe('ElementService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ElementService]
+      providers: [ElementService, RandomService]
     });
   });
 
