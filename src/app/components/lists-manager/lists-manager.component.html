@@ -15,7 +15,7 @@
   </section>
   <section class="content">
     <section *ngIf="isReaderDisplayed()">
-      <app-random-reader [elements]="getElementsRead()"></app-random-reader>
+      <app-random-reader [elements]="getElements()" (readerClosing)="displayList()"></app-random-reader>
     </section>
     <section *ngIf="isListDisplayed()">
       <app-element *ngFor="let element of getElements()" [element]="element"></app-element>

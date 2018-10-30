@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {RandomService} from '../../services/random.service';
 import {Element} from '../../models/element';
 
@@ -9,7 +9,9 @@ import {Element} from '../../models/element';
 })
 export class RandomReaderComponent implements OnChanges {
 
-  @Input('elements') private elementsRead: Element[];
+  @Input() private elements: Element[];
+  @Output() private readerClosing = new EventEmitter();
+  private elementsRead: Element[];
 
   elementRead: Element;
   private indexElement: number;
@@ -17,12 +19,17 @@ export class RandomReaderComponent implements OnChanges {
   constructor(private randomService: RandomService) { }
 
   ngOnChanges() {
+    this.elementsRead = Array.from(this.elements);
     this.readRandomElement();
   }
 
   readNextRandomElement(): void {
     this.elementsRead.splice(this.indexElement, 1);
-    this.readRandomElement();
+    if (this.elementsRead.length <= 0) {
+      this.readerClosing.emit({hasBeenRead: true});
+    } else {
+      this.readRandomElement();
+    }
   }
 
   private readRandomElement(): void {

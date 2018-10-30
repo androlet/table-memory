@@ -13,10 +13,11 @@ describe('RandomReaderComponent', () => {
   let component: RandomReaderComponent;
 
   @Component({
-    template: '<app-random-reader #testedComponent [elements]="elements"></app-random-reader>'
+    template: '<app-random-reader #testedComponent [elements]="elements" (readerClosing)="closeReaderEvent = $event"></app-random-reader>'
   })
   class HostComponent {
     elements: Element[];
+    closeReaderEvent: any;
     @ViewChild('testedComponent') testedComponent;
     setElement(elements: Element[]) {
       this.elements = elements;
@@ -69,5 +70,19 @@ describe('RandomReaderComponent', () => {
 
     //Then
     expect(component.elementRead).not.toBe(firstElementRead);
+  });
+
+  it('should close the reader when all elements has been read', () => {
+    //Given
+    hostComponent.setElement([
+      new Element(1, 'peach', false)
+    ]);
+
+    //When
+    fixture.detectChanges();
+    component.readNextRandomElement();
+
+    //Then
+    expect(hostComponent.closeReaderEvent.hasBeenRead).toBe(true);
   });
 });

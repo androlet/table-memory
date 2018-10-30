@@ -10,10 +10,8 @@ import {Element} from '../../models/element';
 export class ListsManagerComponent implements OnInit {
 
   private elements: Element[];
-
-  private elementsToRead: Element[] = [];
-
   numberElements: number;
+  private isReadingElements: boolean;
 
   constructor(private elementService: ElementService) {
 
@@ -22,6 +20,7 @@ export class ListsManagerComponent implements OnInit {
   ngOnInit() {
     this.numberElements = 40;
     this.loadElements();
+    this.startReading();
   }
 
   private applyNumberElementsConstraints() {
@@ -37,7 +36,6 @@ export class ListsManagerComponent implements OnInit {
   loadElements(): void {
     this.applyNumberElementsConstraints();
     this.elements = this.elementService.getElementsStore(this.numberElements);
-    this.refreshElementsToRead();
   }
 
   getElements(): Element[] {
@@ -61,26 +59,18 @@ export class ListsManagerComponent implements OnInit {
   }
 
   displayList() {
-    this.elementsToRead = [];
+    this.isReadingElements = false;
   }
 
   isReaderDisplayed(): boolean {
-    return this.elementsToRead.length > 0;
+    return this.isReadingElements;
   }
 
   isListDisplayed(): boolean {
-    return this.elementsToRead.length <= 0;
+    return !this.isReadingElements;
   }
 
   startReading(): void {
-    this.refreshElementsToRead();
-  }
-
-  getElementsRead(): Element[] {
-    return this.elementsToRead;
-  }
-
-  private refreshElementsToRead(): void {
-    this.elementsToRead = JSON.parse(JSON.stringify(this.elements));
+    this.isReadingElements = true;
   }
 }
