@@ -8,7 +8,10 @@ import { ElementComponent } from './components/element/element.component';
 import {ElementService} from './services/element.service';
 import {FormsModule} from '@angular/forms';
 import { RandomReaderComponent } from './components/random-reader/random-reader.component';
-import {RandomService} from "./services/random.service";
+import {RandomService} from './services/random.service';
+import {RoutingModule} from './routing/routing.module';
+import { CardsComponent } from './components/cards/cards.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -16,11 +19,14 @@ import {RandomService} from "./services/random.service";
     AppComponent,
     ListsManagerComponent,
     ElementComponent,
-    RandomReaderComponent
+    RandomReaderComponent,
+    CardsComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RoutingModule
   ],
   providers: [ElementService, RandomService],
   bootstrap: [AppComponent]
