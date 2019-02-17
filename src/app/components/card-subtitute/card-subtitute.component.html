@@ -1,3 +1,10 @@
 <article>
-
+  <div class="content" [ngClass]="getSuitClass()">
+    <div class="value">
+      {{card.value}}
+    </div>
+    <div class="suit">
+      {{card.suit}}
+    </div>
+  </div>
 </article>

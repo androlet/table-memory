@@ -1,0 +1,29 @@
+@import '../../../_variables.less';
+
+:host {
+  display: inline-block;
+  width: @cardWidth;
+  height: @cardHeight;
+  border: black solid 0.1rem;
+  border-radius: 0.4rem;
+}
+
+.content {
+  text-align: center;
+  margin-top: @cardHeight / 4;
+}
+
+.suit, .value {
+  line-height: @cardHeight / 4;
+}
+
+.club, .peak {
+  color: #000000;
+}
+
+.heart, .diamond {
+  color: red;
+}
+
+
+

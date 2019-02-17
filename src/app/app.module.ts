@@ -11,7 +11,8 @@ import { RandomReaderComponent } from './components/random-reader/random-reader.
 import {RandomService} from './services/random.service';
 import {RoutingModule} from './routing/routing.module';
 import { CardsComponent } from './components/cards/cards.component';
-import { CardComponent } from './components/card/card.component';
+import {CardSubtituteComponent} from './components/card-subtitute/card-subtitute.component';
+import { CardAnswerSelectorComponent } from './components/card-answer-selector/card-answer-selector.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CardComponent } from './components/card/card.component';
     ElementComponent,
     RandomReaderComponent,
     CardsComponent,
-    CardComponent,
+    CardSubtituteComponent,
+    CardAnswerSelectorComponent
   ],
   imports: [
     BrowserModule,

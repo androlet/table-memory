@@ -1,0 +1,25 @@
+@import '../../../_variables.less';
+
+.answer-selector {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.validated-answer, .wrong-answer {
+  font-size: @cardWidth;
+  position: absolute;
+  z-index: 1;
+}
+
+.validated-answer {
+  color: #a3ff46;
+  left: 10%;
+  top: 10%;
+}
+
+.wrong-answer {
+  color: red;
+  left: 15%;
+  top: 15%;
+}

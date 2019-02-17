@@ -1,0 +1,10 @@
+<div class="answer-selector">
+  <app-card-subtitute [card]="card">
+  </app-card-subtitute>
+  <div *ngIf="isAnswerValidated()" class="validated-answer">
+    ✔
+  </div>
+  <div *ngIf="isAnswerWrong()" class="wrong-answer">
+    ✘
+  </div>
+</div>
