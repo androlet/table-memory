@@ -1,3 +1,24 @@
+export class CardsSolution {
+  private answers: Card[];
+
+  constructor(answers: Card[]) {
+    this.answers = answers;
+  }
+
+  private getExpectedCard(): Card {
+    return this.answers[0];
+  }
+
+  isExpectedCard(answer: Card): boolean {
+    const rightAnswer = this.getExpectedCard();
+    return rightAnswer.suit === answer.suit && rightAnswer.value === answer.value;
+  }
+
+  next(): void {
+    this.answers.shift();
+  }
+}
+
 export class CardAnswerSelector {
   card: Card;
   state: CardAnswerSelectorState;
@@ -7,20 +28,32 @@ export class CardAnswerSelector {
     this.state = CardAnswerSelectorState.NONE;
   }
 
-  verify(realAnswer: Card) {
-    if (this.card.suit === realAnswer.suit && this.card.value === realAnswer.value) {
-      this.state = CardAnswerSelectorState.RIGHT;
-    } else {
-      this.state = CardAnswerSelectorState.WRONG;
-    }
+  isNotSelected(): boolean {
+    return this.state === CardAnswerSelectorState.NONE;
   }
 
-  reset() {
+  isCorrect(): boolean {
+    return this.state === CardAnswerSelectorState.RIGHT;
+  }
+
+  isWrong(): boolean {
+    return this.state === CardAnswerSelectorState.WRONG;
+  }
+
+  validate(): void {
+    this.state = CardAnswerSelectorState.RIGHT;
+  }
+
+  unvalidate(): void {
+    this.state = CardAnswerSelectorState.WRONG;
+  }
+
+  reset(): void {
     this.state = CardAnswerSelectorState.NONE;
   }
 }
 
-export enum CardAnswerSelectorState {
+enum CardAnswerSelectorState {
   RIGHT = 'RIGHT',
   WRONG = 'WRONG',
   NONE = 'NONE'

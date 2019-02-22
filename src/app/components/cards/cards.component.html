@@ -1,8 +1,4 @@
 <!-- random card reader -->
 
 <!-- card interface -->
-<app-card-answer-selector
-  *ngFor="let selector of selectors"
-  [cardAnswerSelector]="selector"
-  (click)="processAnswer(selector)"
-></app-card-answer-selector>
+<app-card-answer-selectors [solution]="solution"></app-card-answer-selectors>

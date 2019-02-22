@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Card, CardAnswerSelector, CardAnswerSelectorState} from '../../models/card';
+import {Component, Input, OnInit} from '@angular/core';
+import {Card, CardAnswerSelector} from '../../models/card';
 
 @Component({
   selector: 'app-card-answer-selector',
@@ -18,11 +18,11 @@ export class CardAnswerSelectorComponent implements OnInit {
   }
 
   isAnswerValidated(): boolean {
-    return this.cardAnswerSelector.state === CardAnswerSelectorState.RIGHT;
+    return this.cardAnswerSelector.isCorrect();
   }
 
   isAnswerWrong(): boolean {
-    return this.cardAnswerSelector.state === CardAnswerSelectorState.WRONG;
+    return this.cardAnswerSelector.isWrong();
   }
 
 }
