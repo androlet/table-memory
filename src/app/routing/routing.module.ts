@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ListsManagerComponent} from '../components/lists-manager/lists-manager.component';
-import {CardsComponent} from '../components/cards/cards.component';
+import {cardRoutes} from '../card/card.routes';
 
 const routes: Routes = [
+    ...cardRoutes,
   { path: 'random-objects', component: ListsManagerComponent },
-  { path: 'random-cards', component: CardsComponent },
   { path: '', redirectTo: '/random-objects', pathMatch: 'full' },
 ];
 

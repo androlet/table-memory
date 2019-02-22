@@ -1,0 +1,9 @@
+<section>
+  <div>
+    <app-card-answer-selector *ngFor="let selector of selectors" [cardAnswerSelector]="selector"
+                              (click)="processAnswer(selector)"></app-card-answer-selector>
+  </div>
+
+</section>
+
+

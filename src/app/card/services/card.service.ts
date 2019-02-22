@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Card, CardSuit, CardValue} from '../models/card';
-import {RandomService} from './random.service';
+import {RandomService} from '../../services/random.service';
 
 @Injectable()
 export class CardService {

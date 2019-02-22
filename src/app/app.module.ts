@@ -10,11 +10,11 @@ import {FormsModule} from '@angular/forms';
 import { RandomReaderComponent } from './components/random-reader/random-reader.component';
 import {RandomService} from './services/random.service';
 import {RoutingModule} from './routing/routing.module';
-import { CardsComponent } from './components/cards/cards.component';
-import {CardSubtituteComponent} from './components/card-subtitute/card-subtitute.component';
-import { CardAnswerSelectorComponent } from './components/card-answer-selector/card-answer-selector.component';
-import { CardAnswerSelectorsComponent } from './components/card-answer-selectors/card-answer-selectors.component';
-import {CardService} from './services/card.service';
+import { CardsComponent } from './card/components/cards/cards.component';
+import {CardSubtituteComponent} from './card/components/card-subtitute/card-subtitute.component';
+import { CardAnswerSelectorComponent } from './card/components/card-answer-selector/card-answer-selector.component';
+import { CardAnswerSelectorsComponent } from './card/components/card-answer-selectors/card-answer-selectors.component';
+import {CardService} from './card/services/card.service';
 
 
 @NgModule({
