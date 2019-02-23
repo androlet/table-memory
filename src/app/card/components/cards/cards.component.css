@@ -1,0 +1,33 @@
+.cards {
+  position: relative;
+  height: 100vh;
+}
+
+.control-panel {
+  background-color: lightgrey;
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 0;
+  height: 10%;
+  position: fixed;
+  z-index: 2;
+}
+
+.control-panel section {
+  flex-grow: 1;
+  paddin-left: 1.5rem;
+}
+
+.control-panel button, .control-panel input {
+  vertical-align: middle;
+  margin: 0.4rem;
+  margin-bottom: 0rem;
+  font-size: 1rem;
+}
+
+.content {
+  position: absolute;
+  top: 21%;
+  width: 100%;
+}

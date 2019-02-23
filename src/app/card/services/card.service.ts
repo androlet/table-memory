@@ -17,7 +17,6 @@ export class CardService {
         this.cardsStandardOrder.push({suit: CardSuit[suit], value: CardValue[value]});
       })
     );
-    this.cardsStandardOrder = this.cardsStandardOrder.slice(0, 5);
   }
 
   getStandardDeck(): Card[] {

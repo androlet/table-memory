@@ -1,0 +1,11 @@
+<section class="reader">
+  <div class="left">
+    <button *ngIf="hasPrevious()" (click)="readPrevious()" class="button-previous">Previous</button>
+  </div>
+  <div class="middle">
+    <app-card-subtitute [card]="elementRead" (click)="readNext()"></app-card-subtitute>
+  </div>
+  <div class="right">
+    <button *ngIf="hasNext()" (click)="readNext()" class="button-next">Next</button>
+  </div>
+</section>

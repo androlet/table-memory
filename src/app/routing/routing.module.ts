@@ -6,7 +6,7 @@ import {cardRoutes} from '../card/card.routes';
 const routes: Routes = [
     ...cardRoutes,
   { path: 'random-objects', component: ListsManagerComponent },
-  { path: '', redirectTo: '/random-objects', pathMatch: 'full' },
+  { path: '', redirectTo: '/random-cards', pathMatch: 'full' },
 ];
 
 @NgModule({

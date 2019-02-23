@@ -10,7 +10,7 @@ import {CardService} from '../../services/card.service';
 export class CardAnswerSelectorsComponent implements OnInit {
 
   selectors: CardAnswerSelector[];
-  @Input() solution: CardsSolution;
+  @Input() private solution: CardsSolution;
 
   constructor(private cardService: CardService) { }
 

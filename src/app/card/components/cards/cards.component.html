@@ -1,4 +1,20 @@
-<!-- random card reader -->
+<section class="cards">
+  <section class="control-panel">
+    <section class="control-list">
+      <div>
+        <button (click)="reset()">Reshuffle</button>
+        <button *ngIf="isReaderHidden()" (click)="startReading()">Read</button>
+        <button *ngIf="isRestitutionInterfaceHidden()" (click)="displayRestitutionInterface()">Restitute</button>
+      </div>
+    </section>
+  </section>
+  <section class="content">
+    <section *ngIf="isReaderDisplayed()">
+      <app-reader [elements]="shuffledDeck"></app-reader>
+    </section>
+    <section *ngIf="isRestitutionInterfaceDisplayed()">
+      <app-card-answer-selectors [solution]="solution"></app-card-answer-selectors>
+    </section>
+  </section>
+</section>
 
-<!-- card interface -->
-<app-card-answer-selectors [solution]="solution"></app-card-answer-selectors>
