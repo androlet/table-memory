@@ -1,0 +1,25 @@
+<section class="number-inputs">
+  <div class="row">
+    <button class="button" (click)="typeNumber(1)">1</button>
+    <button class="button" (click)="typeNumber(2)">2</button>
+    <button class="button" (click)="typeNumber(3)">3</button>
+  </div>
+  <div class="row">
+    <button class="button" (click)="typeNumber(4)">4</button>
+    <button class="button" (click)="typeNumber(5)">5</button>
+    <button class="button" (click)="typeNumber(6)">6</button>
+  </div>
+  <div class="row">
+    <button class="button" (click)="typeNumber(7)">7</button>
+    <button class="button" (click)="typeNumber(8)">8</button>
+    <button class="button" (click)="typeNumber(9)">9</button>
+  </div>
+  <div class="row">
+    <div class="button-slot"></div>
+    <button class="button" (click)="typeNumber(0)">0</button>
+    <button class="button" (click)="backspace()">⟵</button>
+  </div>
+  <div class="warning-message" *ngIf="isAtMaxSizeTyping()">
+    Max size typing reached !
+  </div>
+</section>

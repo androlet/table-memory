@@ -12,6 +12,7 @@ import {RandomService} from './services/random.service';
 import {RoutingModule} from './routing/routing.module';
 import {CardService} from './card/services/card.service';
 import {CardModule} from './card/card.module';
+import {MultiplicationModule} from './multiplication/multiplication.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {CardModule} from './card/card.module';
     BrowserModule,
     FormsModule,
     RoutingModule,
-    CardModule
+    CardModule,
+    MultiplicationModule
   ],
   providers: [ElementService, RandomService, CardService],
   bootstrap: [AppComponent]

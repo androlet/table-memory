@@ -1,0 +1,21 @@
+<section>
+  <section class="controls">
+    <button (click)="toggleSolutionDisplay()">
+      <span *ngIf="!isSolutionDisplayed">Solution</span>
+      <span *ngIf="isSolutionDisplayed">Hide</span>
+    </button>
+    <button (click)="nextExercise()">Next</button>
+  </section>
+  <section class="calcul">
+    <div class="calcul-expression">{{primaryFactor}} × {{secondaryFactor}} = </div>
+    <div class="number-zone">
+      <span *ngIf="!isAnswerCorrect()">
+        <input *ngIf="!isSolutionDisplayed" type="number" [(ngModel)]="selectedAnswer" (ngModelChange)="manageTypeChanges()"/>
+        <span *ngIf="isSolutionDisplayed" class="solution">{{getCorrectAnswer()}}</span>
+      </span>
+      <span *ngIf="isAnswerCorrect()"><span class="result">{{getCorrectAnswer()}}</span><span class="right-answer-sign">✔</span></span>
+    </div>
+  </section>
+  <app-number-input [typedNumber]="selectedAnswer" (typedNumberChange)="onSelectedAnswerChanged($event)"></app-number-input>
+</section>
+

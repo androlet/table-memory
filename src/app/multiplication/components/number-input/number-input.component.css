@@ -1,0 +1,42 @@
+.number-inputs {
+
+}
+
+@media (min-width: 576px){
+  .number-inputs {
+    max-width: 30rem;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.button, .button-slot {
+  flex-basis: 33.33%;
+  margin: 0.05rem;
+  border: none;
+}
+
+.button {
+  color: azure;
+  background-color: rgba(140, 0, 240, 0.2);
+  outline:none;
+  border-radius: 0.2rem;
+  line-height: 2rem;
+  font-size: 1.8rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  background: rgba(75, 0, 130, 0.51);
+}
+
+.warning-message {
+  color: darkred;
+  margin: 0.5rem;
+  text-align: center;
+}

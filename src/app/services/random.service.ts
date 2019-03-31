@@ -9,4 +9,8 @@ export class RandomService {
     return Math.floor(Math.random() * max);
   }
 
+  getRandomNumberFromRange(min: number, max: number): number {
+    return Math.floor(min + this.getRandomNumber(max));
+  }
+
 }
