@@ -1,0 +1,23 @@
+@header-height: 10vh;
+@footer-height: 5vh;
+@main-max-height: 100vh - @header-height - @footer-height;
+
+header {
+  height: @header-height;
+  background-color: rgba(0,255,0,0.3);
+}
+
+main {
+  max-height: @main-max-height;
+  height: @main-max-height;
+  background-color: rgba(0,0,255,0.3);
+  overflow-y: auto;
+  display: block;
+}
+
+footer {
+  //position: fixed;
+  background-color: rgba(0,255,0,0.3);
+ // bottom: @footer-height / 2;
+  height: @footer-height;
+}

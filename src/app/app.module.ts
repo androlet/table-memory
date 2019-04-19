@@ -2,21 +2,14 @@ import {NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
-import {RoutingModule} from './routing/routing.module';
-import {CardsModule} from './cards/cards.module';
-import {MultiplicationsModule} from './multiplications/multiplications.module';
-import {ObjectsModule} from './objects/objects.module';
-
+import {LayoutsModule} from './layouts/layouts.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    RoutingModule,
-    ObjectsModule,
-    CardsModule,
-    MultiplicationsModule
+    LayoutsModule
   ],
   bootstrap: [AppComponent]
 })
