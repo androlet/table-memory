@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
-import {RandomService} from '../../services/random.service';
+import {RandomService} from '../../../services/random.service';
 import {Element} from '../../models/element';
 
 @Component({

@@ -1,6 +1,6 @@
 import {CardsComponent} from './components/cards/cards.component';
 import {Routes} from '@angular/router';
 
-export const cardRoutes: Routes = [
+export const cardsRoutes: Routes = [
   { path: 'random-cards', component: CardsComponent }
 ];

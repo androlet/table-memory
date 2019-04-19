@@ -6,7 +6,7 @@ import {ElementComponent} from '../element/element.component';
 import {FormsModule} from '@angular/forms';
 import {ElementService} from '../../services/element.service';
 import {Element} from '../../models/element';
-import {RandomService} from '../../services/random.service';
+import {RandomService} from '../../../services/random.service';
 
 describe('ListsManagerComponent', () => {
   let component: ListsManagerComponent;

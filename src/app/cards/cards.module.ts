@@ -4,11 +4,12 @@ import {CardSubtituteComponent} from './components/card-subtitute/card-subtitute
 import {CardAnswerSelectorComponent} from './components/card-answer-selector/card-answer-selector.component';
 import {CardAnswerSelectorsComponent} from './components/card-answer-selectors/card-answer-selectors.component';
 import {ReaderComponent} from './components/reader/reader.component';
-import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RoutingModule} from '../routing/routing.module';
 import {RandomService} from '../services/random.service';
 import {CardService} from './services/card.service';
+import {BrowserModule} from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {CardService} from './services/card.service';
     CardAnswerSelectorsComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     RoutingModule
@@ -26,4 +28,4 @@ import {CardService} from './services/card.service';
   providers: [RandomService, CardService],
   exports: [CardsComponent]
 })
-export class CardModule { }
+export class CardsModule { }

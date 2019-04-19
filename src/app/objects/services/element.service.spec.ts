@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ElementService } from './element.service';
-import {RandomService} from './random.service';
+import {RandomService} from '../../services/random.service';
 
 describe('ElementService', () => {
   beforeEach(() => {

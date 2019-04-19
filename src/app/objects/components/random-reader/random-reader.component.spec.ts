@@ -4,7 +4,7 @@ import { RandomReaderComponent } from './random-reader.component';
 import {Component, ViewChild} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {Element} from '../../models/element';
-import {RandomService} from '../../services/random.service';
+import {RandomService} from '../../../services/random.service';
 
 describe('RandomReaderComponent', () => {
 

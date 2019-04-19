@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Element} from '../models/element';
 import {OBJECTS} from '../data/objects';
-import {RandomService} from './random.service';
+import {RandomService} from '../../services/random.service';
 
 @Injectable()
 export class ElementService {
