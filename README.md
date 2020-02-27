@@ -1,27 +1,46 @@
 # TableMemory
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This project purpose is to provide a tool to easily practice mnemonics.
+Try the current version [HERE](https://table-memory.firebaseapp.com/) !
+
+## What I am supposed to do ?
+
+Well, it is memory training based on tables. This tool is to manipulate some lists of items to memorize.
+
+For the given list, you are supposed to memorize each items with its position number. 
+And of course, you are supposed to do it in a random order because that's more challenging ! 
+
+Therefore you should be able to restitute each items, later, whatever the order...
+
+Seems hard ? Well... Maybe you can start with these tutorials :
+- English : https://www.youtube.com/watch?v=soIKt4Tq1EU
+- French : https://youtu.be/bu8spGJrCdo?list=PLG_i4wM5NRw8v-Cyp4X8i4TfmwgTpTS0t&t=173
+
+## Commands :
+
+Two specific views exists to manipulate your current list : 
+- Random reading view : Enable to quickly explore the current list, one item at a time, randomly.
+- List view : Enable to display the whole list with items hidden by defauls. You can display/hide an item by clicking on it.
+
+Detailed commands :
+
+- _Generate_ : Initiate a new list of items with the size specified (A list has a max size of 80, currently...).
+- _Display list_ : Quit the random reading view. Display the table of hidden items view.
+- _Read randomly_ : Quit the table of hidden items view. Display the random reading view.
+- _Next_ : Go to next item while reading randomly.
+- _Hide_ : Hide all items in list view.
+- _Show_ : Reveal all items in list view.
+
+# Development
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm run test` to execute the tests.
