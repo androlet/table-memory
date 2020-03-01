@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {MultiplicationConfigService} from './services/multiplication-config.service';
 import {RandomService} from '../services/random.service';
 import { NumberInputComponent } from './components/number-input/number-input.component';
-import {BrowserModule} from "@angular/platform-browser";
+import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
   imports: [

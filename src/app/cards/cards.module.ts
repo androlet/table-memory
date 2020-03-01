@@ -8,8 +8,8 @@ import {FormsModule} from '@angular/forms';
 import {RoutingModule} from '../routing/routing.module';
 import {RandomService} from '../services/random.service';
 import {CardService} from './services/card.service';
-import {BrowserModule} from "@angular/platform-browser";
-import {CommonModule} from "@angular/common";
+import {BrowserModule} from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
