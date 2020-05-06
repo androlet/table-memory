@@ -1,4 +1,8 @@
 <div class="random-reader">
   <span class="text-element"><span class="number-element">{{elementRead.number}}</span> : <span class="label-element">{{elementRead.label}}</span></span>
-  <button (click)="readNextRandomElement()">Next</button>
+  <div class="reader-controls">
+    <button class="previous" *ngIf="hasPreviousElement()" (click)="displayPreviousElement()" (keyup)="onKey($event)">Previous</button>
+    <span>{{ indexElementAlreadyRead + 1}} / {{ totalElementToRead }}</span>
+    <button class="next" (click)="displayNextElement()" (keyup)="onKey($event)">Next</button>
+  </div>
 </div>

@@ -3,17 +3,22 @@
   text-align: center;
 }
 
-.text-element, button {
-  display: block;
-}
-
 .text-element {
   text-align: center;
   font-size: 4rem;
+  margin-bottom: 2rem;
   display: block;
 }
 
 button {
-  display: block;
+  display: inline-block;
   font-size: 2rem;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
 }

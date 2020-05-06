@@ -1,4 +1,14 @@
+
+const numbers = [];
+
+for(let i = 0; i < 215; i++) {
+  numbers[i] = '' + i;
+}
+numbers.push('220', '333', '335', '553', '550', '555');
+
+
 export const OBJECTS = [
+  ...numbers,
   'pierre', 'tomate', 'sabre', 'champagne', 'sarbacanne', 'pneu', 'bananne', 'couteau', 'voiture', 'feutre',
   'médaille', 'carabine', 'chaussure', 'violon', 'gauffre', 'nénuphare', 'boue', 'ampoule', 'grenadine', 'virus',
   'seringue', 'cocinelle', 'phare', 'rivière', 'casque', 'souris', 'pyramide', 'blouson', 'sopalin', 'marmitte',

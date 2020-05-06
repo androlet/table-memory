@@ -9,24 +9,55 @@ import {Element} from '../../models/element';
 })
 export class RandomReaderComponent implements OnChanges {
 
-  @Input('elements') private elementsRead: Element[];
-
   elementRead: Element;
-  private indexElement: number;
+  @Input('elements') private elementsToRead: Element[];
+  totalElementToRead: number;
+  private indexElementToRead: number;
+
+  private elementsAlreadyRead: Element[];
+  indexElementAlreadyRead: number;
 
   constructor(private randomService: RandomService) { }
 
   ngOnChanges() {
+    this.elementsAlreadyRead = [];
+    this.indexElementAlreadyRead = 0;
+    this.totalElementToRead = this.elementsToRead.length;
     this.readRandomElement();
   }
 
-  readNextRandomElement(): void {
-    this.elementsRead.splice(this.indexElement, 1);
-    this.readRandomElement();
+  hasPreviousElement(): boolean {
+    return this.indexElementAlreadyRead > 0;
+  }
+
+  displayNextElement(): void {
+    if (this.indexElementAlreadyRead === this.elementsAlreadyRead.length - 1) {
+      this.readRandomElement();
+    } else {
+      this.indexElementAlreadyRead++;
+      this.elementRead = this.elementsAlreadyRead[this.indexElementAlreadyRead];
+    }
+  }
+
+  displayPreviousElement(): void {
+    if (this.hasPreviousElement()) {
+      this.indexElementAlreadyRead--;
+      this.elementRead = this.elementsAlreadyRead[this.indexElementAlreadyRead];
+    }
+  }
+
+  onKey(event: any) {
+    if (event.code === 'ArrowRight') {
+      this.displayNextElement();
+    } else if (event.code === 'ArrowLeft') {
+      this.displayPreviousElement();
+    }
   }
 
   private readRandomElement(): void {
-    this.indexElement = this.randomService.getRandomNumber(this.elementsRead.length);
-    this.elementRead = this.elementsRead[this.indexElement];
+    this.indexElementToRead = this.randomService.getRandomNumber(this.elementsToRead.length);
+    this.elementsAlreadyRead.push(this.elementsToRead.splice(this.indexElementToRead, 1)[0]);
+    this.indexElementAlreadyRead = this.elementsAlreadyRead.length - 1;
+    this.elementRead = this.elementsAlreadyRead[this.indexElementAlreadyRead];
   }
 }

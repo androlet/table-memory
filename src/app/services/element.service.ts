@@ -15,21 +15,22 @@ export class ElementService {
   }
 
   getMinimumSizeAllowed(): number {
-    return 1;
+    return 0;
   }
 
   getMaximumSizeAllowed(): number {
-    return this.objects.length;
+    return 214;
   }
 
-  getElementsStore(numberOfElements): Element[] {
+  getElementsStore(min, max): Element[] {
     const listOfElements: Element[] = [];
     const addedObjects = {};
-    while (listOfElements.length < numberOfElements) {
+    const numberOfElements = max - min;
+    while (listOfElements.length < numberOfElements + 1) {
       const selectedObject = this.getRandomObject();
       if (!addedObjects[selectedObject]) {
         addedObjects[selectedObject] = true;
-        listOfElements.push(new Element((listOfElements.length) + 1, selectedObject, false));
+        listOfElements.push(new Element(min + (listOfElements.length), selectedObject, false));
       }
     }
 

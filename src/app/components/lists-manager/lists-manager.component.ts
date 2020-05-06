@@ -13,30 +13,33 @@ export class ListsManagerComponent implements OnInit {
 
   private elementsToRead: Element[] = [];
 
-  numberElements: number;
+  firstIndexElement: number;
+  lastIndexElement: number;
 
   constructor(private elementService: ElementService) {
 
   }
 
   ngOnInit() {
-    this.numberElements = 40;
+    this.firstIndexElement = 0;
+    this.lastIndexElement = 214;
     this.loadElements();
   }
 
   private applyNumberElementsConstraints() {
     const maxSize = this.elementService.getMaximumSizeAllowed();
     const minSize = this.elementService.getMinimumSizeAllowed();
-    if (this.numberElements > maxSize) {
-      this.numberElements = maxSize;
-    } else if (this.numberElements < minSize) {
-      this.numberElements = minSize;
+    if (this.lastIndexElement > maxSize) {
+      this.firstIndexElement = maxSize;
+    }
+    if (this.firstIndexElement < minSize) {
+      this.firstIndexElement = minSize;
     }
   }
 
   loadElements(): void {
     this.applyNumberElementsConstraints();
-    this.elements = this.elementService.getElementsStore(this.numberElements);
+    this.elements = this.elementService.getElementsStore(this.firstIndexElement, this.lastIndexElement);
     this.refreshElementsToRead();
   }
 

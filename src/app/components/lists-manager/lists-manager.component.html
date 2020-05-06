@@ -1,7 +1,8 @@
 <section class="list-manager">
   <section class="control-panel">
       <section class="control-list">
-        <input type="number" [(ngModel)]="numberElements" placeholder="Size of list"/>
+        <input type="number" [(ngModel)]="firstIndexElement" placeholder="first Index Element"/>
+        <input type="number" [(ngModel)]="lastIndexElement" placeholder="last Index Element"/>
         <div>
           <button (click)="loadElements()">Generate</button>
           <button *ngIf="!isReaderDisplayed()" (click)="startReading()">Read randomly</button>
